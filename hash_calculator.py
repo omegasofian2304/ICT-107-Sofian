@@ -31,6 +31,10 @@ if user_input == 1:
 
         print(hash_hex)
 
+        # if the file doesn't exist, it is automatically created
+        with open('hash_output', 'a') as f:
+            pass
+
         with open('hash_output', 'r') as f:
             # read the file for incrementation
             lines = f.readlines()
@@ -39,7 +43,7 @@ if user_input == 1:
                 last_line = lines[-1]
                 first_char = last_line[0]
 
-                number = int(first_char) + 1
+                number = int(last_line.split(')')[0]) + 1
             else:
                 number = 1
 
@@ -66,6 +70,10 @@ if user_input == 2:
         hash_hex = hash_object.hexdigest()
         print(f"Hash SHA-256 du fichier: {hash_hex}")
 
+        # if the file doesn't exist, it is automatically created
+        with open('hash_output', 'a') as f:
+            pass
+
         with open('hash_output', 'r') as f:
             # read the file for incrementation
             lines = f.readlines()
@@ -74,7 +82,7 @@ if user_input == 2:
                 last_line = lines[-1]
                 first_char = last_line[0]
 
-                number = int(first_char) + 1
+                number = int(last_line.split(')')[0]) + 1
             else:
                 number = 1
 
