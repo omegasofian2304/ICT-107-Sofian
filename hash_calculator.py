@@ -21,15 +21,23 @@ user_input = choice("1 Hachage d’un texte saisi.\n2 Hachage d'un fichier texte
 
 if user_input == 1:
     try:
-        hash_input = input("veuillez entrer votre texte : ")
+        print("Entrez votre texte (ligne vide pour terminer) :")
 
+        lines = []
+        while True:
+            line = input()
+            if line == "":
+                break
+            lines.append(line)
+
+        hash_input = "\n".join(lines)
         hash_object = hashlib.sha256()
 
         hash_object.update(hash_input.encode('utf-8'))
 
         hash_hex = hash_object.hexdigest()
 
-        print(hash_hex)
+        print(f"\n{hash_hex}")
 
         # if the file doesn't exist, it is automatically created
         with open('hash_output', 'a') as f:
@@ -59,13 +67,10 @@ if user_input == 2:
     try:
         hash_object = hashlib.sha256()
 
-        # open the file in binary
         with open(filepath, 'rb') as f:
-            while True:
-                chunk = f.read(4096)
-                if not chunk:
-                    break
-                hash_object.update(chunk)
+            data = f.read().replace(b'\r\n', b'\n')
+
+        hash_object.update(data)
 
         hash_hex = hash_object.hexdigest()
         print(f"Hash SHA-256 du fichier: {hash_hex}")
@@ -77,7 +82,6 @@ if user_input == 2:
         with open('hash_output', 'r') as f:
             # read the file for incrementation
             lines = f.readlines()
-
             if lines:
                 last_line = lines[-1]
                 first_char = last_line[0]
