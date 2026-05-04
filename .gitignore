@@ -1,0 +1,5 @@
+*.env
+adresses.txt
+*.xml
+*.iml
+.idea
