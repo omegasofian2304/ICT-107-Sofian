@@ -25,7 +25,7 @@ PRIVATE_KEY = os.getenv("PRIVATE_KEY")
 
 # Montant à envoyer (en ETH)
 
-AMOUNT_TO_SEND = 0.0001
+AMOUNT_TO_SEND = 0.00001
 
 # ==========================================================
 
