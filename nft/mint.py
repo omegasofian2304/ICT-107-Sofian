@@ -11,10 +11,10 @@ deployer_address = "0x7fF364D8D14630d16c2217fC6bD66C14E4AC39f5"
 
 # URL de l'image hébergée (IPFS, Imgur, etc.)
 # Cette URL sera stockée dans le NFT comme metadata
-URI = "https://imgur.com/a/IcicipG"
+URI = "https://raw.githubusercontent.com/omegasofian2304/ICT-107-Sofian/refs/heads/main/nft/metadata.json"
 
 # Adresse du contrat NFT déployé (fournie dans l'exercice)
-contract_address = "0x9A8C8E2EB8F6fA1Bd7EF9161417F64E48bf54225"
+contract_address = "0xb5913CF61fcbc543375FCba1A00BB6aB1fd093c0"
 # =====================================================
 
 # Connexion au nœud Ethereum CPNV
